@@ -20,4 +20,9 @@ class UserProfile extends Model
     {
         return $this->hasOne(User::class, 'USER_INDEX', 'USER_INDEX');
     }
+
+    public function getFullNameAttribute()
+    {
+        return "{$this->LNAME}, {$this->FNAME} {$this->MNAME}";
+    }
 }

@@ -6,7 +6,7 @@
 </head>
 
 <body>
-    <h1>Welcome, {{ $user->userProfile->FNAME }}</h1>
+    <h1>Welcome, {{ $user->userProfile->full_name }}</h1>
     <form action="{{ route('logout') }}" method="POST" style="margin-top: 30px;">
         @csrf
         <button type="submit">Logout</button>
