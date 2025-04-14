@@ -22,14 +22,8 @@ class User extends Authenticatable
     ];
 
     protected $hidden = [
-        'PASSWORD', 'MIXER_'
+        'PASSWORD'
     ];
-
-    // Define accessor for Laravel authentication password
-    public function getAuthPassword()
-    {
-        return $this->PASSWORD;
-    }
 
     public function userProfile()
     {

@@ -25,9 +25,17 @@ class LoginController extends Controller
             ->where('IS_DEL', 0)
             ->first();
 
+
         if ($user) {
-            Auth::login($user);
-            return redirect()->intended('/');
+            // ✅ Check if userProfile is student (AUTH_TYPE_INDEX = 4)
+            if ($user->userProfile && $user->userProfile->AUTH_TYPE_INDEX == 4) {
+                Auth::login($user);
+                return redirect()->intended('/dashboard');
+            }
+    
+            return back()->withErrors([
+                'USER_ID' => 'Access denied. Only students can log in.',
+            ])->withInput();
         }
 
         return back()->withErrors([
