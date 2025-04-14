@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class UserProfile extends Model
 {
-    protected $table = 'USER_INDEX';
+    protected $table = 'USER_TABLE';
     protected $primaryKey = 'USER_INDEX';
     public $timestamps = false;
 
