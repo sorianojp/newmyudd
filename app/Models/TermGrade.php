@@ -21,5 +21,9 @@ class TermGrade extends Model
     public function encodedByUser()
     {
         return $this->belongsTo(UserProfile::class, 'ENCODED_BY', 'USER_INDEX');
-    }    
+    }
+    public function curriculum()
+    {
+        return $this->belongsTo(CurriculumHistory::class, 'CUR_HIST_INDEX', 'CUR_HIST_INDEX');
+    }  
 }
