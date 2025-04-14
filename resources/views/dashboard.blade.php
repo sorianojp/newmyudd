@@ -13,6 +13,7 @@
         <li>Login Index: {{ $user->LOGIN_INDEX }}</li>
         <li>Valid: {{ $user->IS_VALID }}</li>
         <li>Last Renewed: {{ $user->LAST_RENEW }}</li>
+        <li>User Index: {{ $user->USER_INDEX }}</li>
     </ul>
 
     <h2>Final Grades</h2>
@@ -22,6 +23,8 @@
         <th>Grade Name</th>
         <th>Grade</th>
         <th>Credits</th>
+        <th>Remark</th>
+        <th>Instructor</th>
     </tr>
     @foreach ($finalGrades as $grade)
         <tr>
@@ -29,6 +32,12 @@
             <td>{{ $grade->GRADE_NAME }}</td>
             <td>{{ $grade->GRADE }}</td>
             <td>{{ $grade->CREDIT_EARNED }}</td>
+            <td>{{ $grade->remark->REMARK ?? 'N/A' }}</td>
+            <td>
+                {{ $grade->encodedByUser->FNAME ?? '' }}
+                {{ $grade->encodedByUser->MNAME ?? '' }}
+                {{ $grade->encodedByUser->LNAME ?? '' }}
+            </td>
         </tr>
     @endforeach
 </table>
@@ -40,6 +49,8 @@
         <th>Grade Name</th>
         <th>Grade</th>
         <th>Credits</th>
+        <th>Remark</th>
+        <th>Instructor</th>
     </tr>
     @foreach ($termGrades as $term)
         <tr>
@@ -47,6 +58,12 @@
             <td>{{ $term->GRADE_NAME }}</td>
             <td>{{ $term->GRADE }}</td>
             <td>{{ $term->CREDIT_EARNED }}</td>
+            <td>{{ $term->remark->REMARK ?? 'N/A' }}</td>
+            <td>
+                {{ $term->encodedByUser->FNAME ?? '' }}
+                {{ $term->encodedByUser->MNAME ?? '' }}
+                {{ $term->encodedByUser->LNAME ?? '' }}
+            </td>
         </tr>
     @endforeach
 </table>

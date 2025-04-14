@@ -12,16 +12,18 @@ class DashboardController extends Controller
         $user = Auth::user();
 
         $finalGrades = $user->finalGrades()
-            ->with(['subSection.subject'])
-            ->where('IS_VALID', 1)
-            ->where('IS_DEL', 0)
-            ->get();
-
+        ->with(['subSection.subject', 'remark', 'encodedByUser'])
+        ->where('IS_VALID', 1)
+        ->where('IS_DEL', 0)
+        ->get();
+    
         $termGrades = $user->termGrades()
-            ->with(['subSection.subject'])
-            ->where('IS_VALID', 1)
-            ->where('IS_DEL', 0)
-            ->get();
+        ->with(['subSection.subject', 'remark', 'encodedByUser'])
+        ->where('IS_VALID', 1)
+        ->where('IS_DEL', 0)
+        ->get();
+    
+        
 
         return view('dashboard', compact('user', 'finalGrades', 'termGrades'));
     }
