@@ -22,8 +22,6 @@ class DashboardController extends Controller
         ->where('IS_VALID', 1)
         ->where('IS_DEL', 0)
         ->get();
-    
-        
 
         return view('dashboard', compact('user', 'finalGrades', 'termGrades'));
     }
