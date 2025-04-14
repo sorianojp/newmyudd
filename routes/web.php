@@ -23,3 +23,7 @@ Route::post('/logout', function () {
 })->name('logout');
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');
+use App\Http\Controllers\SubjectLoadController;
+
+Route::middleware(['auth'])->get('/subject-load', [SubjectLoadController::class, 'index'])->name('subject.load');
+
