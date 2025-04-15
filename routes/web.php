@@ -10,5 +10,5 @@ Route::get('/', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [LoginController::class, 'login'])->name('login.perform');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');
-Route::middleware(['auth'])->get('/subject-load', [SubjectLoadController::class, 'index'])->name('subject.load');
+Route::get('/subject-load', [SubjectLoadController::class, 'index'])->name('subject.load')->middleware('auth');
 

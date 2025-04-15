@@ -5,7 +5,7 @@
     <div class="w-full max-w-md bg-white p-8 rounded-lg shadow-md">
         <a href="#" class="flex items-center mb-6 text-2xl font-semibold text-gray-900">
           <img class="w-8 h-8 mr-2" src="{{ asset('images/logo.png') }}" alt="logo">
-          My UdD Portal 
+          My UdD Student Portal 
         </a>
         <form action="{{ route('login.perform') }}" method="POST" class="space-y-6">
             @csrf

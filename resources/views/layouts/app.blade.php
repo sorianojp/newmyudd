@@ -17,15 +17,15 @@
             <div class="flex items-center space-x-4">
                 <a href="#" class="text-xl font-bold text-indigo-600">My UdD Portal</a>
                 <a href="{{ route('dashboard') }}" class="text-gray-700 hover:text-indigo-600">My Grades</a>
-                <a href="{{ route('subject.load') }}" class="text-gray-700 hover:text-indigo-600">Subj Load Sched</a>
+                <a href="{{ route('subject.load') }}" class="text-gray-700 hover:text-indigo-600">Subject Load Schedule</a>
             </div>
             <div class="flex items-center">
                 <span class="text-gray-700 font-medium">
-                    {{ Auth::user()->userProfile->full_name }}
+                    {{ Auth::user()->userProfile->full_name }} - ({{ Auth::user()->USER_ID }})
                 </span>
                 <form action="{{ route('logout') }}" method="POST" class="ml-4">
                     @csrf
-                    <button type="submit" class="text-red-600 hover:text-red-800">Logout</button>
+                    <button type="submit" class="text-red-600 hover:text-red-800 hover:underline hover:cursor-pointer">Logout</button>
                 </form>
             </div>
         </div>
@@ -37,5 +37,16 @@
 </main>
 <!-- Scripts -->
 @vite('resources/js/app.js')
+<script>
+    document.getElementById('sy_from').addEventListener('change', function () {
+        const from = parseInt(this.value);
+        const toField = document.getElementById('sy_to');
+        toField.value = !isNaN(from) ? from + 1 : '';
+    });
+
+    document.getElementById('resetFilters').addEventListener('click', function () {
+        window.location.href = '{{ url()->current() }}';
+    });
+</script>
 </body>
 </html>

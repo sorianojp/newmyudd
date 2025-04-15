@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <div class="min-h-screen bg-gray-100 p-6">
-    <div class="max-w-4xl mx-auto bg-white shadow-md rounded-lg p-6">
+    <div class="max-w-5xl mx-auto bg-white shadow-md rounded-lg p-6">
     <h1 class="text-2xl font-bold">My Grades</h1>
         <form method="GET" action="{{ route('dashboard') }}" class="grid grid-cols-1 md:grid-cols-4 gap-4 my-8">
             <div>
@@ -15,13 +15,8 @@
             </div>
 
             <div>
-                <label for="sy_to" class="block text-sm font-medium">SY To</label>
-                <select name="sy_to" id="sy_to" class="w-full mt-1 border rounded px-2 py-1">
-                    <option value="">-- All --</option>
-                    @foreach ($availableTerms->pluck('SY_TO')->unique() as $year)
-                        <option value="{{ $year }}" {{ request('sy_to') == $year ? 'selected' : '' }}>{{ $year }}</option>
-                    @endforeach
-                </select>
+                <label for="sy_to" class="block text-sm font-medium">SY To:</label>
+                <input type="text" id="sy_to" name="sy_to" value="{{ request('sy_to') }}" readonly class="w-full mt-1 border rounded px-2 py-1">
             </div>
 
             <div>
@@ -49,6 +44,7 @@
                 <button type="submit" class="mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
                     Filter
                 </button>
+                <button type="button" class="mt-4 bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700" id="resetFilters">Reset Filter</button>
             </div>
         </form>
 
@@ -78,7 +74,17 @@
                                 <td class="px-4 py-2 border">{{ $grade->GRADE_NAME }}</td>
                                 <td class="px-4 py-2 border">{{ $grade->GRADE }}</td>
                                 <td class="px-4 py-2 border">{{ $grade->CREDIT_EARNED }}</td>
-                                <td class="px-4 py-2 border">{{ $grade->remark->REMARK ?? 'N/A' }}</td>
+                                <td class="px-4 py-2 border">
+                                    <span class="
+                                                    {{ $grade->remark->REMARK == 'Passed' ? 'text-green-500' : '' }}
+                                                    {{ $grade->remark->REMARK == 'Failed' ? 'text-red-500' : '' }}
+                                                    {{ $grade->remark->REMARK == 'In Progress' ? 'text-yellow-500' : '' }}
+                                                    {{ $grade->remark->REMARK == 'NE' ? 'text-blue-500' : '' }}
+                                                    {{ in_array($grade->remark->REMARK, ['Passed', 'Failed', 'In Progress', 'NE']) ? '' : 'text-gray-500' }}
+                                                ">
+                                                    {{ $grade->remark->REMARK ?? 'N/A' }}
+                                    </span>
+                                </td>
                                 <td class="px-4 py-2 border">
                                     {{ $grade->encodedByUser->LNAME ?? '' }},
                                     {{ $grade->encodedByUser->FNAME ?? '' }}
