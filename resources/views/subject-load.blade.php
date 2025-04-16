@@ -27,11 +27,11 @@
                     <table class="min-w-full bg-white border border-gray-200 rounded shadow-sm text-sm text-left">
                         <thead class="bg-gray-100">
                             <tr>
-                                <th class="px-4 py-2 border">Subject Code</th>
-                                <th class="px-4 py-2 border">Subject Title</th>
-                                <th class="px-4 py-2 border text-center">Total Units</th>
-                                <th class="px-4 py-2 border">Schedule</th>
-                                <th class="px-4 py-2 border">Faculty</th>
+                                <th class="px-4 py-2 border w-24">Subject Code</th>
+                                <th class="px-4 py-2 border w-48">Subject Title</th>
+                                <th class="px-4 py-2 border w-24 text-center">Total Units</th>
+                                <th class="px-4 py-2 border w-48">Schedule</th>
+                                <th class="px-4 py-2 border w-48">Faculty</th>
                             </tr>
                         </thead>
                         <tbody>

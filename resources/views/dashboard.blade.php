@@ -60,12 +60,12 @@
                 <table class="min-w-full bg-white border border-gray-200 rounded shadow-sm text-sm text-left">
                     <thead class="bg-gray-100">
                         <tr>
-                            <th class="px-4 py-2 border">Subject</th>
-                            <th class="px-4 py-2 border">Grade Type</th>
-                            <th class="px-4 py-2 border">Grade</th>
-                            <th class="px-4 py-2 border">Credits</th>
-                            <th class="px-4 py-2 border">Remark</th>
-                            <th class="px-4 py-2 border">Encoded By</th>
+                        <th class="px-4 py-2 border w-48">Subject</th>
+                        <th class="px-4 py-2 border w-24">Grade Type</th>
+                        <th class="px-4 py-2 border w-24">Grade</th>
+                        <th class="px-4 py-2 border w-24">Credits</th>
+                        <th class="px-4 py-2 border w-24">Remark</th>
+                        <th class="px-4 py-2 border w-48">Encoded By</th>
                         </tr>
                     </thead>
                     <tbody>
