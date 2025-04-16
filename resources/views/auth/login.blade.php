@@ -16,7 +16,7 @@
             </div>
             <div>
                 <label for="PASSWORD" class="block text-sm font-medium text-gray-700">Password</label>
-                <input type="password" name="PASSWORD" id="PASSWORD" placeholder="Password"
+                <input type="password" name="PASSWORD" id="PASSWORD" placeholder="•••••••••"
                     class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500" />
             </div>
             <button type="submit"
