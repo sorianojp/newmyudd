@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="min-h-screen bg-gray-100 p-6">
+<div class="min-h-screen p-6">
     <div class="max-w-5xl mx-auto bg-white shadow-md rounded-lg p-6">
     <h1 class="text-2xl font-bold">Subjects Load Schedule</h1>
         @forelse ($enrolledSubjects as $term => $subjects)
