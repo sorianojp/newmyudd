@@ -11,7 +11,7 @@
             @csrf
             <div>
                 <label for="USER_ID" class="block text-sm font-medium text-gray-700">Username</label>
-                <input type="text" name="USER_ID" id="USER_ID" placeholder="Username"
+                <input type="text" name="USER_ID" id="USER_ID" placeholder="cddjuandelacruz"
                     class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500" />
             </div>
             <div>
