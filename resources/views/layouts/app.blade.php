@@ -11,8 +11,8 @@
 </head>
 <body class="d-flex flex-column h-100">
 @auth
-<nav class="bg-white shadow-md">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<nav class="bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 shadow">
         <div class="flex justify-between h-16 items-center">
             <!-- Left side: Logo and links -->
             <div class="flex items-center space-x-4">
@@ -54,8 +54,8 @@
     </div>
 </nav>
 @endauth
-<main class="bg-gray-100 p-6">
-    <div class="max-w-5xl mx-auto bg-white shadow-md rounded-lg p-6">
+<main class="bg-gray-100 p-6 relative h-screen overflow-y-auto">
+    <div class="max-w-5xl mx-auto bg-white shadow-sm rounded-lg p-6">
         <p class="text-sm"><span class="font-semibold mr-2">Name:</span>{{ Auth::user()->userProfile->full_name }}</p>
         <p class="text-sm"><span class="font-semibold mr-2">Username:</span>{{ Auth::user()->USER_ID }}</p>
         <p class="text-sm"><span class="font-semibold mr-2">ID Number:</span>{{ Auth::user()->userProfile->ID_NUMBER }}</p>
