@@ -55,12 +55,14 @@
 </nav>
 @endauth
 <main class="bg-gray-100 p-6 relative h-screen overflow-y-auto">
+@auth
     <div class="max-w-5xl mx-auto bg-white shadow-sm rounded-lg p-6">
         <p class="text-sm"><span class="font-semibold mr-2">Name:</span>{{ Auth::user()->userProfile->full_name }}</p>
         <p class="text-sm"><span class="font-semibold mr-2">Username:</span>{{ Auth::user()->USER_ID }}</p>
         <p class="text-sm"><span class="font-semibold mr-2">ID Number:</span>{{ Auth::user()->userProfile->ID_NUMBER }}</p>
     </div>
-    @yield('content')
+@endauth
+@yield('content')
 </main>
 <!-- Scripts -->
 @vite('resources/js/app.js')
