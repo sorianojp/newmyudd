@@ -49,7 +49,7 @@
                                     })->filter()->unique()->implode(', ');
                                 @endphp
 
-                                <tr class="hover:bg-gray-50">
+                                <tr class="hover:bg-gray-100">
                                     <td class="px-4 py-2 border">{{ $group->first()->SUB_CODE }}</td>
                                     <td class="px-4 py-2 border">{{ $group->first()->SUB_NAME }}</td>
                                     <td class="px-4 py-2 border text-center">{{ $group->first()->tot_acad_unit }}</td>

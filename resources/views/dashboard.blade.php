@@ -70,7 +70,7 @@
                     </thead>
                     <tbody>
                         @foreach ($grades as $grade)
-                            <tr class="hover:bg-gray-50">
+                            <tr class="hover:bg-gray-100">
                                 <td class="px-4 py-2 border">{{ $grade->subSection->subject->SUB_NAME ?? 'N/A' }}</td>
                                 <td class="px-4 py-2 border">{{ $grade->GRADE_NAME }}</td>
                                 <td class="px-4 py-2 border">{{ $grade->GRADE }}</td>
